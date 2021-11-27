@@ -18,14 +18,22 @@ function criarPestana(){
     notas.forEach((nota, x) =>{
       let y = x + 1
 
+      nota.title = 'Clique duas vezes para inserir uma pestana'
+
       nota.addEventListener('dblclick', () =>{
         nota.style.zIndex = '50'
 
         pestanas.forEach(pestana =>{
           pestana.classList.toggle(`pestana${y}`)
+
+          pestana.classList.contains(`pestana${y}`) ? (
+            nota.title = 'Clique duas vezes para remover a pestana'
+          ):nota.title = 'Clique duas vezes para inserir uma pestana'
         })
       })
     })
+
+    notas[5].removeAttribute('title')
   })
 }
 
