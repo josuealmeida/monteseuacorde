@@ -1,0 +1,817 @@
+/*
+	- MiniFramework v1.0
+	- Desenvolvido por Josué Almeida
+	- Confira o projeto no GitHub: https://github.com/josuealmeida/MiniFramework
+*/
+
+@use 'variaveis';
+@use 'mixins';
+@import 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap';
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Inter', 'Helvetica', sans-serif;
+	font-weight: normal;
+	color: variaveis.$dark;
+}
+
+html{
+	scroll-behavior: smooth;
+	font-size: 16px;
+
+	@media (max-width: variaveis.$laptop){
+		&{
+			font-size: 14.5px;
+		}
+	}
+
+	@media (max-width: variaveis.$tablet){
+		&{
+			font-size: 13px;
+		}
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	padding: 10px 0;
+	font-weight: 500;
+}
+
+p{
+	padding: 10px 0;
+}
+
+a{
+	text-decoration: none;	
+	&, *{
+		color: variaveis.$blue;
+	}
+}
+
+strong{
+	font-weight: bold;
+}
+
+::selection{
+	background: rgba(100 100 100 / 0.5);
+	color: variaveis.$dark;
+}
+
+.overflow-hidden{overflow: hidden}
+
+
+
+// Cores de background
+.bg-dark{
+	background: variaveis.$dark !important;
+	&, *{
+		color: variaveis.$white;
+	} 
+}
+.bg-gray{
+	background: variaveis.$gray !important;
+	&, *{
+		color: variaveis.$white;
+	}
+}
+.bg-light{
+	background: variaveis.$light !important;
+	&, *{
+		color: variaveis.$dark;
+	}
+}
+.bg-white{
+	background: variaveis.$white !important;
+	&, *{
+		color: variaveis.$dark;
+	}
+}
+.bg-blue{
+	background: variaveis.$blue !important;
+	&, *{
+		color: variaveis.$white;
+	}
+}
+.bg-green{
+	background: variaveis.$green !important;
+	&, *{
+		color: variaveis.$white;
+	}
+}
+.bg-red{
+	background: variaveis.$red !important;
+	&, *{
+		color: variaveis.$white;
+	}
+}
+.bg-yellow{
+	background: variaveis.$yellow !important;
+	&, *{
+		color: variaveis.$dark;
+	}
+}
+
+
+
+// Cores de texto
+.dark{color: variaveis.$dark !important}
+.gray{color: variaveis.$gray !important}
+.light{color: variaveis.$light !important}
+.white{color: variaveis.$white !important}
+.blue{color: variaveis.$blue !important}
+.green{color: variaveis.$green !important}
+.red{color: variaveis.$red !important}
+.yellow{color: variaveis.$yellow !important}
+
+// Tamanhos de texto
+.text-1{font-size: variaveis.$text1 !important}
+.text-2{font-size: variaveis.$text2 !important}
+.text-3{font-size: variaveis.$text3 !important}
+.text-4{font-size: variaveis.$text4 !important}
+.text-5{font-size: variaveis.$text5 !important}
+
+@media (max-width: variaveis.$mobile){
+	.text-5{font-size: variaveis.$text4 !important}
+}
+
+// Alinhamento de texto
+.text-left{text-align: left}
+.text-center{text-align: center}
+.text-right{text-align: right}
+.text-justify{text-align: justify}
+
+// Texto maiúsculo
+.uppercase{text-transform: uppercase;}
+
+// Texto negrito
+.bold{font-weight: bold}
+
+// Texto itálico
+.italic{font-style: italic}
+
+
+
+// Listas
+li{
+	list-style-position: inside;
+}
+
+.no-list{
+	list-style: none;
+}
+
+
+
+// Buttons
+button, input[type="submit"], input[type="button"], input[type="file"]{
+	@include mixins.btn(variaveis.$blue, variaveis.$white);
+}
+
+.btn{@include mixins.btn(variaveis.$blue, variaveis.$white)}
+.btn-light{@include mixins.btn(variaveis.$light, variaveis.$dark)}
+.btn-gray{@include mixins.btn(variaveis.$gray, variaveis.$white)}
+.btn-green{@include mixins.btn(variaveis.$green, variaveis.$white)}
+.btn-red{@include mixins.btn(variaveis.$red, variaveis.$light)}
+.btn-yellow{@include mixins.btn(variaveis.$yellow, variaveis.$dark)}
+
+.btn-dark{
+	@include mixins.btn(variaveis.$dark, variaveis.$white);
+
+	&:hover{
+		background: lighten(variaveis.$dark, 20%);
+	}
+}
+
+// Soft buttons
+.btn-soft{
+	@include mixins.btn(lighten(variaveis.$blue, 35%), darken(variaveis.$blue, 15%));
+	&:hover{
+		background: lighten(variaveis.$blue, 40%);
+	}
+}
+
+.btn-soft-green{
+	@include mixins.btn(lighten(variaveis.$green, 35%), darken(variaveis.$green, 15%));
+	&:hover{
+		background: lighten(variaveis.$green, 40%);
+	}
+}
+
+.btn-soft-red{
+	@include mixins.btn(lighten(variaveis.$red, 35%), darken(variaveis.$red, 15%));
+	&:hover{
+		background: lighten(variaveis.$red, 40%);
+	}
+}
+
+.btn-soft-yellow{
+	@include mixins.btn(lighten(variaveis.$yellow, 30%), darken(variaveis.$yellow, 20%));
+	&:hover{
+		background: lighten(variaveis.$yellow, 35%);
+	}
+}
+
+// Icon button or icon link 
+.btn-icon{
+	@include mixins.iconButton();
+}
+
+
+
+// Informações
+.info{@include mixins.info(variaveis.$blue)}
+.info-light{@include mixins.info(variaveis.$light)}
+.info-gray{@include mixins.info(variaveis.$gray)}
+.info-green{@include mixins.info(variaveis.$green)}
+.info-red{@include mixins.info(variaveis.$red)}
+.info-yellow{@include mixins.info(variaveis.$yellow)}
+
+
+
+// Formulários e inputs
+input[type="text"], input[type="password"], input[type="email"],
+input[type="date"], input[type="number"], textarea{
+	background: variaveis.$white;
+	border: none;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	outline: none;
+	padding: 14px 20px;
+	display: block;
+	width: 100%;
+	font-size: 1rem;
+	font-weight: 400;
+	caret-color: lighten(variaveis.$dark, 20%);
+	color: lighten(variaveis.$dark, 20%) !important;
+	resize: none;
+	transition: .2s border;
+
+	&:hover{
+		border-color: #cccccc;
+	}
+
+	&:focus{
+		border-color: variaveis.$gray;
+	}
+
+	&::placeholder{
+		font-weight: 200;
+	}
+}
+
+.form-group{
+	max-width: 100%;
+	margin-top: variaveis.$size2;
+}
+
+
+
+// Tabelas
+table{
+	width: 100%;
+	border-collapse: collapse;
+
+	th, td{
+		padding: variaveis.$size1;
+	}
+
+	th{
+		border-bottom: 1px solid #ddd;
+		text-align: left;
+		font-weight: 700;
+	}
+
+	tr:nth-child(odd){
+		background-color: variaveis.$white;
+	}
+
+	tr:nth-child(even){
+		background-color: variaveis.$light;
+	}
+}
+
+
+
+// Bordas
+.border{border: 1px solid #ccc}
+.border-top{border-top: 1px solid #ccc}
+.border-bottom{border-bottom: 1px solid #ccc}
+.border-left{border-left: 1px solid #ccc}
+.border-right{border-right: 1px solid #ccc}
+
+
+
+// Links ativos dos menus de navagação
+header{
+	.link{
+		transition: opacity .2s;
+
+		&.active{
+			opacity: .7;
+		}
+
+		&:hover{
+			opacity: .5;
+		}
+	}
+}
+
+
+
+// Sidebar button
+.btn-sidebar{
+	@include mixins.iconButton();
+}
+
+// Sidebar overlay
+.sidebar-overlay{
+	width: 100%;
+	height: 100%;
+	background: rgba(0 0 0 / 0);
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	transform: translateX(-100%);
+	transition: transform .2s, background .6s;
+
+	&.open{
+		transform: translateX(0);
+		background: rgba(0 0 0 / .5);
+	}
+}
+
+// Sidebar
+.sidebar{
+	width: variaveis.$mobile;
+	height: 100vh;
+	background: variaveis.$white;
+	position: fixed;
+	top: 0;
+	z-index: 50;
+	opacity: .6;
+	overflow: auto;
+	transform: translateX(-100%);
+	transition: transform .3s, opacity .2s, box-shadow .3s;
+
+	&.open{
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	header{	
+		@include mixins.flex(space-between, center);
+		padding: 15px variaveis.$size2;
+
+		h2, h3, h4, h5, h6{
+			font-size: variaveis.$text2;
+			font-weight: 500;				
+		}
+
+		button{
+			@include mixins.iconButton();
+		}
+	}
+
+	// Itens do sidebar
+	.item{
+		display: block;
+		background: none;
+		width: 100%;
+		padding: 15px variaveis.$size2;
+		border-radius: 0;
+		text-align: left;
+		font-weight: normal;
+		transition: background .2s;
+
+		&, *{
+			font-size: 1rem;
+			color: inherit !important;
+		}
+
+		&.active{
+			background: rgba(200 200 200 / .3);
+		}
+
+		&:hover{
+			background: rgba(200 200 200 / .2);
+		}
+	}
+}
+
+@media (max-width: variaveis.$mobile){
+	.sidebar{width: 100%}
+}
+
+
+
+// Modal overlay
+.modal-overlay{
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 80;
+
+	&.open{
+		display: block;
+		background: rgba(0 0 0 / .5);
+	}
+
+	button{
+		@include mixins.iconButton();
+		position: fixed;
+		top: variaveis.$size2;
+		right: variaveis.$size2;
+
+		i{
+			color: variaveis.$white !important;
+		}
+	}
+}
+
+
+
+// Modal
+.modal{
+	display: none;
+	width: variaveis.$tablet;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: variaveis.$white;
+	border-radius: 5px;
+	overflow: hidden;
+	z-index: 200;
+
+	&.open{
+		display: block;
+	}
+
+	& > article, & > section, & > form, & > div{
+		max-height: 70vh;
+		overflow: auto;
+		padding: variaveis.$size3;
+
+		h2, h3, h4, h5, h6{
+			font-size: variaveis.$text3;
+			font-weight: 600;
+		}
+	}
+
+	footer{
+		padding: variaveis.$size1 variaveis.$size3;
+		position: sticky;
+		bottom: 0;
+		width: 100%;
+		background: variaveis.$light;
+		border-top: 1px solid darken(variaveis.$light, 5%);
+		text-align: right;
+	}
+}
+
+@media (max-width: variaveis.$tablet){
+	.modal-overlay button{
+		display: none !important;
+	}
+
+	.modal{
+		width: 90%;
+
+		& > article, & > section, & > form, & > div{
+			padding: variaveis.$size2;
+		}
+	}
+}
+
+@media (max-width: variaveis.$mobile){
+	.modal{
+		width: 100%;
+		border-radius: 0;
+
+		footer{
+			padding: variaveis.$size1 variaveis.$size2;
+			
+			button, input, a{
+				display: block;
+				width: 100%;
+				text-align: center;
+				margin-bottom: 5px;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	} 
+}
+
+
+
+// Scroll to top
+.scroll-top{
+	@include mixins.flex(center, center);
+	width: 45px;
+	height: 45px;
+	position: fixed;
+	right: variaveis.$size2;
+	bottom: variaveis.$size2;
+	border-radius: 3px;
+	transform: translateY(200%);
+	transition: transform .3s;
+	z-index: 100;
+
+	&.visible{
+		transform: translateY(0);
+	}
+
+	i{
+		font-size: 25px;
+	}
+}
+
+
+
+// Container
+.container{
+	max-width: 1180px;
+	margin: 0 auto;
+}
+
+// Flexbox layout
+.flex{display: flex}
+
+.flex-center{@include mixins.flex(center, center)}
+
+.flex-between-center{@include mixins.flex(space-between, center)}
+.flex-between{@include mixins.flex(space-between, flex-start)}
+
+.flex-around{@include mixins.flex(space-around, flex-start)}
+.flex-around-center{@include mixins.flex(space-around, center)}
+
+.flex-evenly{@include mixins.flex(space-evenly, flex-start)}
+.flex-evenly-center{@include mixins.flex(space-evenly, center)}
+
+.flex-column{flex-direction: column}
+.flex-wrap{flex-wrap: wrap}
+
+
+
+// Grid layout
+$col2: calc(100% / 2);
+$col3: calc(100% / 3);
+$col4: calc(100% / 4);
+$col5: calc(100% / 5);
+$col6: calc(100% / 6);
+
+.grid-column-1{@include mixins.grid(auto)}
+.grid-column-2{@include mixins.grid($col2 $col2)}
+.grid-column-3{@include mixins.grid($col3 $col3 $col3)}
+.grid-column-4{@include mixins.grid($col4 $col4 $col4 $col4)}
+.grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
+.grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
+
+.grid-align-center{align-items: center}
+
+@media (max-width: variaveis.$laptop){
+	.lg-grid-column-1{@include mixins.grid(auto)}
+	.lg-grid-column-2{@include mixins.grid($col2 $col2)}
+	.lg-grid-column-3{@include mixins.grid($col3 $col3 $col3)}
+	.lg-grid-column-4{@include mixins.grid($col4 $col4 $col4 $col4)}
+	.lg-grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
+	.lg-grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
+}
+
+@media (max-width: variaveis.$tablet){
+	.md-grid-column-1{@include mixins.grid(auto)}
+	.md-grid-column-2{@include mixins.grid($col2 $col2)}
+	.md-grid-column-3{@include mixins.grid($col3 $col3 $col3)}
+	.md-grid-column-4{@include mixins.grid($col4 $col4 $col4 $col4)}
+	.md-grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
+	.md-grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
+}
+
+@media (max-width: variaveis.$mobile){
+	.sm-grid-column-1{@include mixins.grid(auto)}
+	.sm-grid-column-2{@include mixins.grid($col2 $col2)}
+	.sm-grid-column-3{@include mixins.grid($col3 $col3 $col3)}
+	.sm-grid-column-4{@include mixins.grid($col4 $col4 $col4 $col4)}
+	.sm-grid-column-5{@include mixins.grid($col5 $col5 $col5 $col5 $col5)}
+	.sm-grid-column-6{@include mixins.grid($col6 $col6 $col6 $col6 $col6 $col6)}
+}
+
+
+
+
+// Display
+.d-block{display: block}
+.d-inline-block{display: inline-block}
+.d-inline{display: inline}
+.d-none{display: none}
+
+@media (max-width: variaveis.$laptop){
+	// Flexbox
+	.lg-flex-column{flex-direction: column}
+
+	// Display
+	.lg-d-block{display: block}
+	.lg-d-inline-block{display: inline-block}
+	.lg-d-inline{display: inline}
+	.lg-d-none{display: none}
+}
+
+@media (max-width: variaveis.$tablet){
+	// Container
+	.container{max-width: 580px}
+
+	// Flexbox
+	.md-flex-column{flex-direction: column}
+
+	// Display
+	.md-d-block{display: block}
+	.md-d-inline-block{display: inline-block}
+	.md-d-inline{display: inline}
+	.md-d-none{display: none}
+}
+
+@media (max-width: variaveis.$mobile){
+	// Flexbox
+	.sm-flex-column{flex-direction: column}
+
+	// Display
+	.sm-d-block{display: block}
+	.sm-d-inline-block{display: inline-block}
+	.sm-d-inline{display: inline}
+	.sm-d-none{display: none}
+}
+
+
+// Position
+.relative{position: relative}
+.absolute{position: absolute}
+.fixed{position: fixed}
+.sticky{position: sticky}
+
+.top{top: 0}
+.bottom{bottom: 0}
+.left{left: 0}
+.right{right: 0}
+
+.left-center{
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+}
+
+.right-center{
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+}
+
+
+
+// Margens
+.m-auto{margin: auto}
+.m-0{margin: 0}
+.m-1{margin: variaveis.$size1}
+.m-2{margin: variaveis.$size2}
+.m-3{margin: variaveis.$size3}
+
+// Margens do topo
+.mt-auto{margin-top: auto}
+.mt-0{margin-top: 0}
+.mt-1{margin-top: variaveis.$size1}
+.mt-2{margin-top: variaveis.$size2}
+.mt-3{margin-top: variaveis.$size3}
+
+// Margens de baixo
+.mb-auto{margin-bottom: auto}
+.mb-0{margin-bottom: 0}
+.mb-1{margin-bottom: variaveis.$size1}
+.mb-2{margin-bottom: variaveis.$size2}
+.mb-3{margin-bottom: variaveis.$size3}
+
+// Margens esquerdas
+.ml-auto{margin-left: auto}
+.ml-0{margin-left: 0}
+.ml-1{margin-left: variaveis.$size1}
+.ml-2{margin-left: variaveis.$size2}
+.ml-3{margin-left: variaveis.$size3}
+
+// Margens direitas
+.mr-auto{margin-right: auto}
+.mr-0{margin-right: 0}
+.mr-1{margin-right: variaveis.$size1}
+.mr-2{margin-right: variaveis.$size2}
+.mr-3{margin-right: variaveis.$size3}
+
+// Margens do eixo y (vertical)
+.my-auto{@include mixins.marginY(auto)}
+.my-0{@include mixins.marginY(0)}
+.my-1{@include mixins.marginY(variaveis.$size1)}
+.my-2{@include mixins.marginY(variaveis.$size2)}
+.my-3{@include mixins.marginY(variaveis.$size3)}
+
+// Margens do eixo x (horizontal)
+.mx-auto{@include mixins.marginX(auto)}
+.mx-0{@include mixins.marginX(0)}
+.mx-1{@include mixins.marginX(variaveis.$size1)}
+.mx-2{@include mixins.marginX(variaveis.$size2)}
+.mx-3{@include mixins.marginX(variaveis.$size3)}
+
+
+
+// Paddings
+.p-auto{padding: auto}
+.p-0{padding: 0}
+.p-1{padding: variaveis.$size1}
+.p-2{padding: variaveis.$size2}
+.p-3{padding: variaveis.$size3}
+
+// Paddings do topo
+.pt-auto{padding-top: auto}
+.pt-0{padding-top: 0}
+.pt-1{padding-top: variaveis.$size1}
+.pt-2{padding-top: variaveis.$size2}
+.pt-3{padding-top: variaveis.$size3}
+
+// Paddings de baixo
+.pb-auto{padding-bottom: auto}
+.pb-0{padding-bottom: 0}
+.pb-1{padding-bottom: variaveis.$size1}
+.pb-2{padding-bottom: variaveis.$size2}
+.pb-3{padding-bottom: variaveis.$size3}
+
+// Paddings esquerdos
+.pl-auto{padding-left: auto}
+.pl-0{padding-left: 0}
+.pl-1{padding-left: variaveis.$size1}
+.pl-2{padding-left: variaveis.$size2}
+.pl-3{padding-left: variaveis.$size3}
+
+// Paddings direitos
+.pr-auto{padding-right: auto}
+.pr-0{padding-right: 0}
+.pr-1{padding-right: variaveis.$size1}
+.pr-2{padding-right: variaveis.$size2}
+.pr-3{padding-right: variaveis.$size3}
+
+// Paddings do eixo y (vertical)
+.py-auto{@include mixins.paddingY(auto)}
+.py-0{@include mixins.paddingY(0)}
+.py-1{@include mixins.paddingY(variaveis.$size1)}
+.py-2{@include mixins.paddingY(variaveis.$size2)}
+.py-3{@include mixins.paddingY(variaveis.$size3)}
+
+// Paddings do eixo x (horizontal)
+.px-auto{@include mixins.paddingX(auto)}
+.px-0{@include mixins.paddingX(0)}
+.px-1{@include mixins.paddingX(variaveis.$size1)}
+.px-2{@include mixins.paddingX(variaveis.$size2)}
+.px-3{@include mixins.paddingX(variaveis.$size3)}
+
+
+
+// Imagens
+img{
+	width: 100%;
+	object-fit: cover;
+}
+
+
+// Loading
+@keyframes loaderRotate{
+	to{
+		transform: rotate(360deg);
+	}
+}
+
+.loading{
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: variaveis.$white;
+	position: fixed;
+	z-index: 50;
+
+	&.hidden{
+		display: none;
+	}
+
+	.loader{
+		border: 3px solid #e5e5e5;
+		border-right-color: variaveis.$blue;
+		border-radius: 50%;
+		width: 50px;
+		height: 50px;
+		animation: loaderRotate .6s linear infinite;
+	}
+}
