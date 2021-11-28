@@ -1,3 +1,14 @@
+function adicionarBemolSustenido(){
+  const inputs = document.querySelectorAll('input')
+
+  inputs.forEach(input =>{
+    input.onkeyup = (tecla) =>{
+      input.value = input.value.replace('b', '♭')
+      input.value = input.value.replace('#', '♯')
+    }
+  })
+}
+
 function adicionarNota(){
   const notas = document.querySelectorAll('.nota')
 
@@ -89,6 +100,7 @@ function alterarCasa(){
   }
 }
 
+adicionarBemolSustenido()
 adicionarNota()
 criarPestana()
 alterarAberturaCorda()
