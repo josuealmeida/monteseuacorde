@@ -100,7 +100,7 @@ function alterarCasa(){
   }
 }
 
-adicionarBemolSustenido()
+// adicionarBemolSustenido()
 adicionarNota()
 criarPestana()
 alterarAberturaCorda()
