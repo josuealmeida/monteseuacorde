@@ -44,12 +44,12 @@ function criarPestana(){
       })
     })
 
-    notas[5].removeAttribute('title')
+    notas[notas.length - 1].removeAttribute('title')
   })
 }
 
 function alterarAberturaCorda(){
-  const indicadoresCorda = document.querySelectorAll('#cordas-soltas .bx')
+  const indicadoresCorda = document.querySelectorAll('.cordas-soltas .bx')
 
   indicadoresCorda.forEach(indicador =>{
     indicador.addEventListener('click', () =>{
@@ -65,20 +65,39 @@ function alterarAberturaCorda(){
 }
 
 function abrirCorda(){
-  const casas = document.querySelectorAll('.casa')
-  const indicadoresCorda = document.querySelectorAll('#cordas-soltas .bx')
+  const casasUkulele = document.querySelectorAll('#diagrama-ukulele .casa')
+  const indicadoresCordaUkulele = document.querySelectorAll('#diagrama-ukulele .cordas-soltas .bx')
 
-  casas.forEach(casa =>{
+  casasUkulele.forEach(casa =>{
     const notas = casa.querySelectorAll('.nota')
 
     notas.forEach((corda, x) =>{
       corda.addEventListener('click', () =>{
-        indicadoresCorda[x].classList.contains('bx-x') ? (
-          indicadoresCorda[x].classList.remove('bx-x'),
-          indicadoresCorda[x].classList.add('bx-circle')
+        indicadoresCordaUkulele[x].classList.contains('bx-x') ? (
+          indicadoresCordaUkulele[x].classList.remove('bx-x'),
+          indicadoresCordaUkulele[x].classList.add('bx-circle')
         ):(
-          indicadoresCorda[x].classList.remove('bx-circle'),
-          indicadoresCorda[x].classList.add('bx-x')
+          indicadoresCordaUkulele[x].classList.remove('bx-circle'),
+          indicadoresCordaUkulele[x].classList.add('bx-x')
+        )
+      })
+    })
+  })
+
+  const casasGuiitarra = document.querySelectorAll('#diagrama-guitarra .casa')
+  const indicadoresCordaGuiitarra = document.querySelectorAll('#diagrama-guitarra .cordas-soltas .bx')
+
+  casasGuiitarra.forEach(casa =>{
+    const notas = casa.querySelectorAll('.nota')
+
+    notas.forEach((corda, x) =>{
+      corda.addEventListener('click', () =>{
+        indicadoresCordaGuiitarra[x].classList.contains('bx-x') ? (
+          indicadoresCordaGuiitarra[x].classList.remove('bx-x'),
+          indicadoresCordaGuiitarra[x].classList.add('bx-circle')
+        ):(
+          indicadoresCordaGuiitarra[x].classList.remove('bx-circle'),
+          indicadoresCordaGuiitarra[x].classList.add('bx-x')
         )
       })
     })
@@ -86,8 +105,8 @@ function abrirCorda(){
 }
 
 function alterarCasa(){
-  const casas = document.querySelectorAll('#diagrama .casa')
-  const numeroCasa = document.querySelector('#numero-casa')
+  const casas = document.querySelectorAll('.diagrama .casa')
+  const numeroCasa = document.querySelector('.numero-casa')
 
   numeroCasa.onchange = () =>{
     parseInt(numeroCasa.value) > 1 ? (
@@ -98,6 +117,17 @@ function alterarCasa(){
       casas[4].style.borderBottom = '1px solid #333'
     ):casas[4].style.borderBottom = 'none'
   }
+}
+
+const details = document.querySelectorAll('details')
+const summarys = document.querySelectorAll('summary')
+
+for(summary of summarys){
+  summary.addEventListener('click', () =>{
+    for(detail of details){
+      detail.open = false
+    }
+  })
 }
 
 // adicionarBemolSustenido()

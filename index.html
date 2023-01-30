@@ -28,203 +28,360 @@
 
     <!-- Main -->
     <main>
-      <div id="area-container">
+      <details open>
+        <summary>Violão / Guitarra</summary>
 
-        <!-- Nome do acorde -->
-        <input id="nome-acorde" type="text" placeholder="Nome do acorde">
+        <!-- Diagrama para guitarra -->
+        <div id="diagrama-guitarra" class="area-container">
 
-        <!-- Afinação -->
-        <div id="afinacao">
-          <input type="text" value="E" placeholder="!">
-          <input type="text" value="A" placeholder="!">
-          <input type="text" value="D" placeholder="!">
-          <input type="text" value="G" placeholder="!">
-          <input type="text" value="B" placeholder="!">
-          <input type="text" value="E" placeholder="!">
+          <!-- Nome do acorde -->
+          <input class="nome-acorde" type="text" placeholder="Nome do acorde">
+
+          <!-- Afinação -->
+          <div class="afinacao">
+            <input type="text" value="E" placeholder="!">
+            <input type="text" value="A" placeholder="!">
+            <input type="text" value="D" placeholder="!">
+            <input type="text" value="G" placeholder="!">
+            <input type="text" value="B" placeholder="!">
+            <input type="text" value="E" placeholder="!">
+          </div>
+
+          <!-- Diagrama do acorde -->
+          <div class="diagrama-container">
+
+            <!-- Número da casa -->
+            <input class="numero-casa" type="text" value="1" placeholder="!">
+
+            <div class="diagrama">
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
+              </div>
+
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
+              </div>
+
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
+              </div>
+
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
+              </div>
+
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cordas a serem tocadas -->
+          <div class="cordas-soltas">
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+
         </div>
+      </details>
 
-        <!-- Diagrama do acorde -->
-        <div id="diagrama-container">
 
-          <!-- Número da casa -->
-          <input id="numero-casa" type="text" value="1" placeholder="!">
 
-          <div id="diagrama">
-            <div class="casa">
-              <div class="corda">
-                <div class="nota"></div>
+      <!-- Diagrama para ukulele -->
+      <details>
+        <summary>Ukulele</summary>
+
+        <!-- Diagrama para ukulele -->
+        <div id="diagrama-ukulele" class="area-container">
+
+          <!-- Nome do acorde -->
+          <input class="nome-acorde" type="text" placeholder="Nome do acorde">
+
+          <!-- Afinação -->
+          <div class="afinacao">
+            <input type="text" value="G" placeholder="!">
+            <input type="text" value="C" placeholder="!">
+            <input type="text" value="E" placeholder="!">
+            <input type="text" value="A" placeholder="!">
+          </div>
+
+          <!-- Diagrama do acorde -->
+          <div class="diagrama-container">
+
+            <!-- Número da casa -->
+            <input class="numero-casa" type="text" value="1" placeholder="!">
+
+            <div class="diagrama">
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
               </div>
 
-              <div class="corda">
-                <div class="nota"></div>
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
               </div>
 
-              <div class="corda">
-                <div class="nota"></div>
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
               </div>
 
-              <div class="corda">
-                <div class="nota"></div>
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
               </div>
 
-              <div class="corda">
-                <div class="nota"></div>
+              <div class="casa">
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="corda">
+                  <div class="nota"></div>
+                </div>
+
+                <div class="pestana"></div>
               </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="pestana"></div>
-            </div>
-
-            <div class="casa">
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="pestana"></div>
-            </div>
-
-            <div class="casa">
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="pestana"></div>
-            </div>
-
-            <div class="casa">
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="pestana"></div>
-            </div>
-
-            <div class="casa">
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="corda">
-                <div class="nota"></div>
-              </div>
-
-              <div class="pestana"></div>
             </div>
           </div>
+
+          <!-- Cordas a serem tocadas -->
+          <div class="cordas-soltas">
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+
+            <div class="corda">
+              <i class="bx bx-x"></i>
+            </div>
+          </div>
+
         </div>
+      </details>
 
-        <!-- Cordas a serem tocadas -->
-        <div id="cordas-soltas">
-          <div class="corda">
-            <i class="bx bx-x"></i>
-          </div>
-
-          <div class="corda">
-            <i class="bx bx-x"></i>
-          </div>
-
-          <div class="corda">
-            <i class="bx bx-x"></i>
-          </div>
-
-          <div class="corda">
-            <i class="bx bx-x"></i>
-          </div>
-
-          <div class="corda">
-            <i class="bx bx-x"></i>
-          </div>
-
-          <div class="corda">
-            <i class="bx bx-x"></i>
-          </div>
-        </div>
-
-      </div>
     </main>
 
     <!-- Footer -->
     <footer>
-      <small>Desenvolvido por <a href="https://josuealmeida.github.io">Josué Almeida</a></small>
+      <small>Desenvolvido por <a href="https://github.com/josuealmeida">Josué Almeida</a></small>
     </footer>
 
     <!-- Scripts -->
