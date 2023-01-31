@@ -119,8 +119,8 @@ function alterarCasa(){
   }
 }
 
-const details = document.querySelectorAll('.instrumento')
-const summarys = document.querySelectorAll('.instrumento summary')
+const details = document.querySelectorAll('details')
+const summarys = document.querySelectorAll('summary')
 
 for(summary of summarys){
   summary.addEventListener('click', () =>{
