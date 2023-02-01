@@ -49,16 +49,14 @@ function criarPestana(){
 }
 
 function alterarAberturaCorda(){
-  const indicadoresCorda = document.querySelectorAll('.cordas-soltas .bx')
+  const indicadoresCorda = document.querySelectorAll('.cordas-soltas .indicator-icon')
 
   indicadoresCorda.forEach(indicador =>{
     indicador.addEventListener('click', () =>{
-      indicador.classList.contains('bx-x') ? (
-        indicador.classList.remove('bx-x'),
-        indicador.classList.add('bx-circle')
+      indicador.classList.contains('open') ? (
+        indicador.classList.remove('open')
       ):(
-        indicador.classList.remove('bx-circle'),
-        indicador.classList.add('bx-x')
+        indicador.classList.add('open')
       )      
     })
   })
@@ -66,38 +64,34 @@ function alterarAberturaCorda(){
 
 function abrirCorda(){
   const casasUkulele = document.querySelectorAll('#diagrama-ukulele .casa')
-  const indicadoresCordaUkulele = document.querySelectorAll('#diagrama-ukulele .cordas-soltas .bx')
+  const indicadoresCordaUkulele = document.querySelectorAll('#diagrama-ukulele .cordas-soltas .indicator-icon')
 
   casasUkulele.forEach(casa =>{
     const notas = casa.querySelectorAll('.nota')
 
     notas.forEach((corda, x) =>{
       corda.addEventListener('click', () =>{
-        indicadoresCordaUkulele[x].classList.contains('bx-x') ? (
-          indicadoresCordaUkulele[x].classList.remove('bx-x'),
-          indicadoresCordaUkulele[x].classList.add('bx-circle')
+        indicadoresCordaUkulele[x].classList.contains('open') ? (
+          indicadoresCordaUkulele[x].classList.remove('open')
         ):(
-          indicadoresCordaUkulele[x].classList.remove('bx-circle'),
-          indicadoresCordaUkulele[x].classList.add('bx-x')
+          indicadoresCordaUkulele[x].classList.add('open')
         )
       })
     })
   })
 
-  const casasGuiitarra = document.querySelectorAll('#diagrama-guitarra .casa')
-  const indicadoresCordaGuiitarra = document.querySelectorAll('#diagrama-guitarra .cordas-soltas .bx')
+  const casasGuitarra = document.querySelectorAll('#diagrama-guitarra .casa')
+  const indicadoresCordaGuitarra = document.querySelectorAll('#diagrama-guitarra .cordas-soltas .indicator-icon')
 
-  casasGuiitarra.forEach(casa =>{
+  casasGuitarra.forEach(casa =>{
     const notas = casa.querySelectorAll('.nota')
 
     notas.forEach((corda, x) =>{
       corda.addEventListener('click', () =>{
-        indicadoresCordaGuiitarra[x].classList.contains('bx-x') ? (
-          indicadoresCordaGuiitarra[x].classList.remove('bx-x'),
-          indicadoresCordaGuiitarra[x].classList.add('bx-circle')
+        indicadoresCordaGuitarra[x].classList.contains('open') ? (
+          indicadoresCordaGuitarra[x].classList.remove('open')
         ):(
-          indicadoresCordaGuiitarra[x].classList.remove('bx-circle'),
-          indicadoresCordaGuiitarra[x].classList.add('bx-x')
+          indicadoresCordaGuitarra[x].classList.add('open')
         )
       })
     })
@@ -127,6 +121,28 @@ for(summary of summarys){
     for(detail of details){
       detail.open = false
     }
+  })
+}
+
+const downloadButtons = document.querySelectorAll('.download-btn')
+
+for(btn of downloadButtons){
+  btn.addEventListener('click', (event) =>{
+    const printArea = event.target.previousElementSibling
+    const chordName = printArea.querySelector('.nome-acorde').value
+
+    domtoimage.toPng(printArea)
+      .then(function (dataUrl) {
+        var img = new Image();
+        img.src = dataUrl;
+        const a = document.createElement('a')
+        a.setAttribute('download', `${chordName}.png`)
+        a.setAttribute('href', img.src)
+        a.click()
+      })
+      .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+      });
   })
 }
 

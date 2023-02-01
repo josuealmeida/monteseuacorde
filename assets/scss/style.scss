@@ -7,16 +7,30 @@ header{
   padding: 8px 22px;
 
   img{
-    width: 30px;
+    width: 40px;
   }
 
   h1{
     font-size: 1.2rem;
+    padding: 0;
+  }
+
+  small{
+    font-size: 0.75rem;
+    color: #ccc !important;
+
+    a{
+      color: inherit !important;
+
+      &:hover{
+        text-decoration: underline;
+      }
+    }
   }
 }
 
 main{
-  margin-top: 25px;
+  margin-top: 15px;
   display: flex;
   justify-content: center;
   gap: 5px;
@@ -28,6 +42,7 @@ main{
     border-radius: 100px;
     padding: 8px 22px;
     color: #333 !important;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: border-color .2s;
 
@@ -47,7 +62,11 @@ main{
   transform: translateX(-50%);
   width: 400px;
   margin: 0 auto;
-  padding: 25px;
+
+  .print-area{
+    background: #fff;
+    padding: 25px;
+  }
 
   input{
     text-align: center;
@@ -71,7 +90,7 @@ main{
     margin: 20px auto;
   }
   
-  // Diagram do acorde
+  // Diagrama do acorde
   .diagrama-container{
     width: 260px;
     margin: 20px auto;
@@ -167,12 +186,26 @@ main{
     margin: 0 auto;
 
     .corda{
-      .bx{
-        text-align: center;
-        font-size: 2rem;
+      .indicator-icon{
+        background-image: url(../img/x-icon.svg);
+        background-size: cover;
+        width: 2rem;
+        height: 2rem;
         cursor: pointer;
+
+        &.open{
+          background-image: url(../img/circle-icon.svg);
+        }
       }
     }
+  }
+
+  // Botão para download do diagram
+  .download-btn{
+    display: block;
+    margin: 0 auto 25px auto;
+    padding: 12px 30px;
+    border-radius: 50px;
   }
 }
 
@@ -201,23 +234,5 @@ main{
 
   .pestana1{
     width: calc(100% / 3 * 3 + 2px + 30px);
-  }
-}
-
-// Footer
-footer{
-  text-align: right;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  margin-top: 100px;
-  width: 100%;
-
-  a{
-    font-weight: 500;
-
-    &:hover{
-      text-decoration: underline;
-    }
   }
 }
