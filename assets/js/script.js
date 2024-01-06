@@ -71,10 +71,10 @@ function abrirCorda(){
 
     notas.forEach((corda, x) =>{
       corda.addEventListener('click', () =>{
-        indicadoresCordaUkulele[x].classList.contains('invisible') ? (
-          indicadoresCordaUkulele[x].classList.remove('invisible')
+        indicadoresCordaUkulele[x].classList.contains('open') ? (
+          indicadoresCordaUkulele[x].classList.remove('open')
         ):(
-          indicadoresCordaUkulele[x].classList.add('invisible')
+          indicadoresCordaUkulele[x].classList.add('open')
         )
       })
     })
@@ -88,10 +88,10 @@ function abrirCorda(){
 
     notas.forEach((corda, x) =>{
       corda.addEventListener('click', () =>{
-        indicadoresCordaGuitarra[x].classList.contains('invisible') ? (
-          indicadoresCordaGuitarra[x].classList.remove('invisible')
+        indicadoresCordaGuitarra[x].classList.contains('open') ? (
+          indicadoresCordaGuitarra[x].classList.remove('open')
         ):(
-          indicadoresCordaGuitarra[x].classList.add('invisible')
+          indicadoresCordaGuitarra[x].classList.add('open')
         )
       })
     })
