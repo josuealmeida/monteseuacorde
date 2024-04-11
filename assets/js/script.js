@@ -15,6 +15,7 @@ function adicionarNota(){
   notas.forEach(nota =>{
     nota.addEventListener('click', () =>{
       nota.classList.toggle('active')
+      nota.value = ''
     })
   })
 }
@@ -36,6 +37,8 @@ function criarPestana(){
 
         pestanas.forEach(pestana =>{
           pestana.classList.toggle(`pestana${y}`)
+          pestana.focus()
+          pestana.value = ''
 
           pestana.classList.contains(`pestana${y}`) ? (
             nota.title = 'Clique duas vezes para remover a pestana'
