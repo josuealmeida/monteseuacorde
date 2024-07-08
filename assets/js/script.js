@@ -43,6 +43,10 @@ function criarPestana(){
           pestana.classList.contains(`pestana${y}`) ? (
             nota.title = 'Clique duas vezes para remover a pestana'
           ):nota.title = 'Clique duas vezes para inserir uma pestana'
+
+          pestana.addEventListener('dblclick', ()=>{
+            pestana.classList.remove(`pestana${y}`)
+          })
         })
       })
     })
@@ -149,7 +153,7 @@ for(btn of downloadButtons){
   })
 }
 
-// adicionarBemolSustenido()
+adicionarBemolSustenido()
 adicionarNota()
 criarPestana()
 alterarAberturaCorda()
