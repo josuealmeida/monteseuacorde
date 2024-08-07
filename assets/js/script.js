@@ -1,5 +1,5 @@
 function adicionarBemolSustenido(){
-  const inputs = document.querySelectorAll('input')
+  const inputs = document.querySelectorAll('.nome-acorde')
 
   inputs.forEach(input =>{
     input.onkeyup = (tecla) =>{
