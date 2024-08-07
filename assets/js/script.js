@@ -131,27 +131,45 @@ for(summary of summarys){
   })
 }
 
-const downloadButtons = document.querySelectorAll('.download-btn')
+const clearButton = document.querySelectorAll('.clear-btn')
 
-for(btn of downloadButtons){
+for(btn of clearButton){
   btn.addEventListener('click', (event) =>{
     const printArea = event.target.previousElementSibling
-    const chordName = printArea.querySelector('.nome-acorde').value
+    const notas = printArea.querySelectorAll('.nota')
+    const indicadoresCorda = printArea.querySelectorAll('.cordas-soltas .indicator-icon')
 
-    domtoimage.toPng(printArea)
-      .then(function (dataUrl) {
-        var img = new Image();
-        img.src = dataUrl;
-        const a = document.createElement('a')
-        a.setAttribute('download', `${chordName}.png`)
-        a.setAttribute('href', img.src)
-        a.click()
-      })
-      .catch(function (error) {
-        console.error('oops, something went wrong!', error);
-      });
+    for(nota of notas){
+      nota.classList.remove('active')
+    }
+
+    for(indicador of indicadoresCorda){
+      indicador.classList.remove('open')
+    }
   })
 }
+
+// const downloadButtons = document.querySelectorAll('.download-btn')
+
+// for(btn of downloadButtons){
+//   btn.addEventListener('click', (event) =>{
+//     const printArea = event.target.previousElementSibling
+//     const chordName = printArea.querySelector('.nome-acorde').value
+
+//     domtoimage.toPng(printArea)
+//       .then(function (dataUrl) {
+//         var img = new Image();
+//         img.src = dataUrl;
+//         const a = document.createElement('a')
+//         a.setAttribute('download', `${chordName}.png`)
+//         a.setAttribute('href', img.src)
+//         a.click()
+//       })
+//       .catch(function (error) {
+//         console.error('oops, something went wrong!', error);
+//       });
+//   })
+// }
 
 adicionarBemolSustenido()
 adicionarNota()
