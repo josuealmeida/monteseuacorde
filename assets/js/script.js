@@ -137,10 +137,19 @@ for(btn of clearButton){
   btn.addEventListener('click', (event) =>{
     const printArea = event.target.previousElementSibling
     const notas = printArea.querySelectorAll('.nota')
+    const pestanas = printArea.querySelectorAll('.pestana')
     const indicadoresCorda = printArea.querySelectorAll('.cordas-soltas .indicator-icon')
 
     for(nota of notas){
       nota.classList.remove('active')
+    }
+
+    for(pestana of pestanas){
+      pestana.classList.remove('pestana1')
+      pestana.classList.remove('pestana2')
+      pestana.classList.remove('pestana3')
+      pestana.classList.remove('pestana4')
+      pestana.classList.remove('pestana5')
     }
 
     for(indicador of indicadoresCorda){

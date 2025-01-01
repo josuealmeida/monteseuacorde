@@ -1,7 +1,9 @@
-@import '../../lib/miniframework/scss/mixins';
-
-$str_width: 6;
+$str_width: 7;
 $string-color: #222;
+
+input{
+  outline: none;
+}
 
 header{
   display: flex;
@@ -80,18 +82,9 @@ main{
   // Nome do acorde
   .nome-acorde{
     margin: 0 auto;
-    font-size: 3.2rem;
-    font-weight: bold;
-    color: #000 !important;
-  }
-
-  // Afinação
-  .afinacao{
-    display: flex;
-    justify-content: space-between;
-    gap: 5px;
-    width: 300px;
-    margin: 20px auto;
+    font-size: 64px;
+    font-weight: 600;
+    width: 100%;
   }
   
   // Diagrama do acorde
@@ -106,10 +99,9 @@ main{
       position: absolute;
       left: 0;
       transform: translateX(-100%);
-      top: 25px;
+      top: 10px;
       padding-right: 20px;
-      font-size: 1.75rem;
-      font-weight: 600;
+      font-size: 32px;
       text-align: right;
     }
 
@@ -167,8 +159,7 @@ main{
             left: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
-            font-weight: bold;
-            font-size: 1.15rem;
+            font-size: 24px;
             opacity: 0;
             outline: none;
 
@@ -194,7 +185,7 @@ main{
           right: -15px;
           transform: translateY(-50%);
           color: #fff;
-          font-weight: bold;
+          font-size: 24px;
           outline: none;
 
           &.pestana5{
@@ -260,7 +251,7 @@ main{
   // Botão para limpar o diagrama
   .clear-btn{
     display: block;
-    margin: 0 auto 25px auto;
+    margin: 15px auto;
     padding: 12px 30px;
     border-radius: 50px;
   }
