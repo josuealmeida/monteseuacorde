@@ -1,5 +1,5 @@
 $str_width: 7;
-$string-color: #222;
+$string-color: #ccc;
 
 input{
   outline: none;
@@ -84,6 +84,7 @@ main{
     margin: 0 auto;
     font-size: 64px;
     font-weight: 600;
+    line-height: 0;
     width: 100%;
   }
   
@@ -100,7 +101,7 @@ main{
       left: 0;
       transform: translateX(-100%);
       top: 10px;
-      padding-right: 20px;
+      padding-right: 25px;
       font-size: 32px;
       text-align: right;
     }
@@ -118,12 +119,13 @@ main{
           top: 0;
           left: 0;
           width: 100%;
-          height: 1.5px;
-          background: #777;
+          height: 5px;
+          background: #aaa;
         }
 
         &:nth-child(1){
-          border-top: 8px solid #000;
+          border-top: 10px solid #000;
+          border-radius: 4px;
 
           &::after{
             display: none;
@@ -141,16 +143,16 @@ main{
           @for $i from 1 through 3 {
             &:nth-child(#{$i}) {
               width: #{$str_width}px;
-              border-left: 1.75px solid $string-color;
-              border-right: 1.75px solid $string-color;
-              background: #ddd;
+              border-left: 2px solid $string-color;
+              border-right: 2px solid $string-color;
+              background: #f6f6f6;
             }
             $str_width: $str_width - 1
           }
 
           .nota{
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             background: #000;
             border-radius: 50%;
             position: absolute;
@@ -159,7 +161,8 @@ main{
             left: 50%;
             transform: translate(-50%, -50%);
             cursor: pointer;
-            font-size: 24px;
+            font-size: 28px;
+            font-weight: 600;
             opacity: 0;
             outline: none;
 
@@ -176,7 +179,7 @@ main{
 
         .pestana{
           width: 0;
-          height: 30px;
+          height: 36px;
           background: #000;
           border-radius: 30px;
           position: absolute;
@@ -185,7 +188,8 @@ main{
           right: -15px;
           transform: translateY(-50%);
           color: #fff;
-          font-size: 24px;
+          font-size: 28px;
+          font-weight: 600;
           outline: none;
 
           &.pestana5{
