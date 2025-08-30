@@ -105,18 +105,18 @@ function abrirCorda(){
   })
 }
 
-function alterarCasa(){
-  const casas = document.querySelectorAll('.diagrama .casa')
-  const numeroCasa = document.querySelector('.numero-casa')
+function alterarCasa(diagram){
+  const casas = document.querySelectorAll(`${diagram} .diagrama .casa`)
+  const numeroCasa = document.querySelector(`${diagram} .numero-casa`)
 
   numeroCasa.onchange = () =>{
     parseInt(numeroCasa.value) > 1 ? (
-      casas[0].style.borderTop = 'none'
-    ):casas[0].style.borderTop = '8px solid #000'
+      casas[0].style.borderColor = 'transparent'
+    ):casas[0].style.borderTop = '10px solid #000'
 
     parseInt(numeroCasa.value) >= 20 ? (
-      casas[4].style.borderBottom = '1px solid #333'
-    ):casas[4].style.borderBottom = 'none'
+      casas[4].style.borderBottom = '3px solid #888'
+    ):casas[4].style.borderColor = 'transparent'
   }
 }
 
@@ -185,4 +185,5 @@ adicionarNota()
 criarPestana()
 alterarAberturaCorda()
 abrirCorda()
-alterarCasa()
+alterarCasa('#diagrama-guitarra')
+alterarCasa('#diagrama-ukulele')
